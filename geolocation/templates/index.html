@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Geolocation</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .navbar{
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .row.content{
+            height: 450px;
+        }
+
+        .sidenav{
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        footer{
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidenav{
+                height: auto;
+                padding: 15px;
+            }
+            .row.content{
+                height: auto;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toogle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Geolocation</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-8 text left">
+                <h1 align="center">Your location - {{ data.query }}</h1>
+                <!--<p align="center">{{ data }}</p>-->
+                <p align="center">
+                    <ul>
+                        <li>Country: {{ data.country }}</li>
+                        <li>City: {{ data.city }}</li>
+                        <li>Latitude: {{ data.lat }}</li>
+                        <li>Longitude: {{ data.lon }}</li>
+                    </ul>
+                </p>
+                <hr>
+                <h3 align="center"> More Details</h3>
+                <p align="center">
+                    <ul>
+                        <li>Country Code: {{ data.countryCode }}</li>
+                        <li>Timezone: {{ data.timezone }}</li>
+                        <li>Postal Code: {{ data.zip }}</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
